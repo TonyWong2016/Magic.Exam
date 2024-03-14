@@ -4,6 +4,7 @@ using Magic.Exam.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Magic.Exam.Migrations
 {
     [DbContext(typeof(ExamDbContext))]
-    partial class ExamDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240314101332_Updated_Examinations_Entity")]
+    partial class Updated_Examinations_Entity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,12 +33,14 @@ namespace Magic.Exam.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AssociationId")
+                        .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
                         .HasDefaultValue("");
 
                     b.Property<string>("AssociationName")
+                        .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)")
@@ -88,6 +93,7 @@ namespace Magic.Exam.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GroupCode")
+                        .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
@@ -110,6 +116,7 @@ namespace Magic.Exam.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Remark")
+                        .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)")

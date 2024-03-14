@@ -8,15 +8,15 @@ namespace Magic.Exam.Examinations
 {
     public class ExaminationDto : AuditedEntityDto<Guid>
     {
-        public string Title { get; set; }
+        public string Title { get; set; } = string.Empty;
 
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
-        public string AssociationId { get; set; }
+        public string AssociationId { get; set; } = string.Empty;
 
-        public string AssociationName { get; set; }
+        public string AssociationName { get; set; } = string.Empty;
 
-        public string FilterJson { get; set; }
+        public string FilterJson { get; set; } = string.Empty;
 
         public double BaseScore { get; set; }
 
@@ -33,7 +33,7 @@ namespace Magic.Exam.Examinations
         public DateTime EndTime { get; set; }
         public int OrderIndex { get; set; }
 
-        public string GroupCode { get; set; }
-        public string Remark { get; set; }
+        public string GroupCode { get; set; } = string.Empty;
+        public string Remark { get; set; } = string.Empty;
     }
 }

@@ -29,14 +29,13 @@ namespace Magic.Exam.Examinations
 
         public ExaminationType ExamType { get; set; }
 
-        public int Status { get; set; } = 1;
+        public ExaminationStatus Status { get; set; }
 
         public int OrderIndex { get; set; } = 1;
 
         public string GroupCode { get; set; } = string.Empty;
 
-        public int IsStrict { get; set; } = 0;
-
+        public ExaminationStrict IsStrict { get; set; } 
         public string Remark { get; set; } = string.Empty;
 
     }

@@ -87,10 +87,10 @@ public class ExamDbContext :
             b.ConfigureByConvention();
             b.Property(x => x.Title).IsRequired().HasMaxLength(200);
 
-            b.Property(x => x.AssociationId).IsRequired().HasMaxLength(50);
-            b.Property(x => x.AssociationName).IsRequired().HasMaxLength(200);
-            b.Property(x => x.GroupCode).IsRequired().HasMaxLength(50);
-            b.Property(x => x.Remark).IsRequired().HasMaxLength(500);
+            b.Property(x => x.AssociationId).HasMaxLength(50).HasDefaultValue("").IsRequired(false);
+            b.Property(x => x.AssociationName).HasMaxLength(200).HasDefaultValue("").IsRequired(false);
+            b.Property(x => x.GroupCode).HasMaxLength(50).HasDefaultValue("").IsRequired(false);
+            b.Property(x => x.Remark).HasDefaultValue("").HasMaxLength(500).IsRequired(false);
             b.Property(x => x.ExamType).IsRequired().HasDefaultValue(ExaminationType.Undefined);
             b.Property(x => x.BaseDuration).IsRequired();
             b.Property(x => x.StartTime).IsRequired();

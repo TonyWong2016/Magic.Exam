@@ -34,6 +34,21 @@ public class ExamMenuContributor : IMenuContributor
             )
         );
 
+
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                ExamMenus.Exam,
+                l["Menu:Exam"],
+                icon: "fa fa-book"
+            ).AddItem(
+                new ApplicationMenuItem(
+                    ExamMenus.Examinations,
+                    l["Menu:Examinations"],
+                    url: "/Examinations"
+                )
+            )
+        );
+
         if (MultiTenancyConsts.IsEnabled)
         {
             administration.SetSubItemOrder(TenantManagementMenuNames.GroupName, 1);

@@ -1,0 +1,21 @@
+﻿@page
+@using Magic.Exam.Web.Pages.Examinations
+@using Magic.Exam.Localization
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+
+@model Magic.Exam.Web.Pages.Examinations.CreateModalModel
+@inject IStringLocalizer<ExamResource> L
+@{
+    Layout = null;
+}
+
+<abp-dynamic-form abp-model="ExaminationDto" asp-page="/Examinations/CreateModal">
+    <abp-modal>
+        <abp-modal-header title="@L["Create"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-form-content />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</abp-dynamic-form>

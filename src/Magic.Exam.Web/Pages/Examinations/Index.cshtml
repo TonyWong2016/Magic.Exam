@@ -1,0 +1,30 @@
+﻿@page
+@using Magic.Exam.Web.Pages.Examinations
+@using Magic.Exam.Localization
+@using Microsoft.Extensions.Localization
+@model IndexModel
+
+@inject IStringLocalizer<ExamResource> L
+@section scripts
+{
+    <abp-script src="/Pages/Examinations/index.js"></abp-script>
+}
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Examinations"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+                <abp-button id="NewExaminationButton"
+                            text="@L["Create"].Value"
+                            icon="plus"
+                            button-type="Primary">
+                </abp-button>
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="ExaminationsTable"></abp-table>
+    </abp-card-body>
+</abp-card>
